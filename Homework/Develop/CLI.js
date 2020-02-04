@@ -181,7 +181,7 @@ function enterInfo() {
 }
 function CreateHtml() {
     html = htmlHead + htmlMng + htmlEng + htmlInt + htmlFoot;
-    fs.writeFile("team.html", html, function (err) {
+    fs.writeFile("./output/team.html", html, function (err) {
         if (err) throw err;
         console.log(html);
     })

@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <header style="width: 100%; height : 60px;background-color: brown; margin:auto" class="text-center">
+        <h1>
+            My Team
+        </h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row" id="manager">
+
+                </div>
+
+            </div>
+            <div class="col-md-4" id="engineer">
+
+            </div>
+            <div class="col-md-4" id="intern">
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var manager = [];
+        var engineer = [];
+        var intern = [];
+        function createCard(array) {
+            for (var i = 0; i < array.length; i++) {
+                var createDiv = $("<div>");
+                createDiv.addClass("card bg-primary col-md-3");
+                var createBody=$("<div>");
+                var createUl=$("<ul>");
+                var createName = $("<h5>");
+                createName.text(array[i].name);
+                var createRole = $("<p>");
+                createRole.text(array[i].title);
+                var createID = $("<li>");
+                createID.text("ID: " + array[i].id);
+                var createEmail = $("<li>");
+                createEmail.text("Email: " + array[i].email);
+                var createOff = $("<li>");
+                var createGit = $("<li>");
+                var createSch = $("<li>");
+                if (array[i].officeNumber != null) {
+                    createOff.text(array[i].officeNumber);
+                }
+                if (array[i].github != null) {
+                    createGit.text(array[i].github);
+                }
+                if (array[i].school != null) {
+                    createSch.text(array[i].school);
+                }
+            }
+        }
+    </script>
+
+    <div class="card bg-primary col-md-3">
+        <div class="card-body">
+            <h5 class="card-title">dick</h5>
+            <p class="card-text">
+                <img src="./Assets/piggy-bank.png" style="height: 25px;width: 25px;margin-right: 5px" alt="">Manager</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: 111</li>
+            <li class="list-group-item">Email: <a href="#">dick.com</a> </li>
+            <li class="list-group-item">Office number: 101</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
